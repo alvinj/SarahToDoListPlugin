@@ -8,11 +8,11 @@ then
   exit 1
 fi
 
-cp target/scala-2.10/timer_2.10-0.1.jar Timer.jar
+cp target/scala-2.10/todolist_2.10-0.1.jar ToDoList.jar
 
-ls -l Timer.jar
+ls -l ToDoList.jar
 
 echo ""
-echo "Created Timer.jar. Copy that file to /Users/al/Sarah/plugins/DDTimer, like this:"
-echo "cp Timer.jar /Users/al/Sarah/plugins/DDTimer"
+echo "Created ToDoList.jar. Copy that file to /Users/al/Sarah/plugins/DDToDoList, like this:"
+echo "cp ToDoList.jar /Users/al/Sarah/plugins/DDToDoList"
 

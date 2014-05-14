@@ -23,7 +23,7 @@ object ToDoListUtils {
     val compiledAddPattern = Pattern.compile(addPattern)
 
     // delete pattern
-    val deletePattern = "(delete|remove) (.*) from (my|the)* *to do list"
+    val deletePattern = "(delete|removed*) (.*) from (my|the)* *to do list"
     val compiledDeletePattern = Pattern.compile(deletePattern)
     
     // show pattern

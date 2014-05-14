@@ -46,11 +46,13 @@ class TimerUtilsTests extends FunSuite with Matchers {
     val dv2 = "delete vacuum from my to do list"
     val dv3 = "remove vacuum from my to do list"
     val dv4 = "remove vacuum from the to do list"
+    val dv5 = "removed vacuum from the to do list"
     test("test extracting tasks from spoken 'delete vacuum' phrases") {
         assert(ToDoListUtils.getTaskFromSpokenDeletePhrase(dv1).get == "vacuum")
         assert(ToDoListUtils.getTaskFromSpokenDeletePhrase(dv2).get == "vacuum")
         assert(ToDoListUtils.getTaskFromSpokenDeletePhrase(dv3).get == "vacuum")
         assert(ToDoListUtils.getTaskFromSpokenDeletePhrase(dv4).get == "vacuum")
+        assert(ToDoListUtils.getTaskFromSpokenDeletePhrase(dv5).get == "vacuum")
     }
 
     test("test matching 'delete' phrases") {
@@ -62,8 +64,22 @@ class TimerUtilsTests extends FunSuite with Matchers {
         assert(ToDoListUtils.phraseMatchesDeletePattern(dv2) == true)
         assert(ToDoListUtils.phraseMatchesDeletePattern(dv3) == true)
         assert(ToDoListUtils.phraseMatchesDeletePattern(dv4) == true)
+        assert(ToDoListUtils.phraseMatchesDeletePattern(dv5) == true)
     }
+    
+    val s1 = "show to do list"
+    val s2 = "show my to do list"
+    val s3 = "show the to do list"
+    test("test matching 'show' phrases") {
+        assert(ToDoListUtils.phraseMatchesShowPattern(s1) == true)
+        assert(ToDoListUtils.phraseMatchesShowPattern(s2) == true)
+        assert(ToDoListUtils.phraseMatchesShowPattern(s3) == true)
+    }
+
 }
+
+
+
 
 
 
